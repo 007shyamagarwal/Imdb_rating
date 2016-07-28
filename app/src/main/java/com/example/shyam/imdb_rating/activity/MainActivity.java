@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        recyclerView.setHasFixedSize(true);
 
         ApiInterface apiService =
                 ApiClient.getClient().create(ApiInterface.class);

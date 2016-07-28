@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,6 +21,23 @@ import com.example.shyam.imdb_rating.R;
 import com.example.shyam.imdb_rating.model.Movie;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
+
+   //for pagination
+
+   public static final int HEADER = 0;
+    public static final int ITEM = 1;
+    public static final int LOADING = 2;
+
+    private AdapterView.OnItemClickListener mOnItemClickListener;
+    private boolean mIsLoadingFooterAdded = false;
+
+
+    public interface OnItemClickListener {
+        void onItemClick(int position, View view);
+    }
+
+//
+
 
     private List<Movie> movies;
     private int rowLayout;
